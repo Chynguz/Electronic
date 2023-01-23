@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="display: flex; flex-wrap: wrap; gap: 20px;">
+  {% for i in product %}
+  <div class="card mt-5" style="width: 18rem;">
+    <img src="{{i.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center;">{{i.title}}</h5>
+      <p class="card-text" style="text-align: center;">{{i.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{i.price}} сом</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
