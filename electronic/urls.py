@@ -18,10 +18,14 @@ from django.contrib import admin
 from django.urls import path
 
 from electronic.settings import MEDIA_ROOT, MEDIA_URL
-from main.views import main
+from main.views import main, more, add_to_cart, cart, remove_product
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main, name='main'),
+    path('more/<int:id>', more, name='more'),
+    path('add_to_cart/<int:id>', add_to_cart, name='add_to_cart'),
+    path('cart', cart, name='cart'),
+    path('remove_product/<int:id>', remove_product, name='remove_product'),
 ]
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
